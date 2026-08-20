@@ -11,6 +11,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def read_root():
+    return {"status": "ok", "message": "Sneakers Store API is running"}
+
 @app.get("/products")
 def get_products(category: str = None, search: str = None):
     result = products
