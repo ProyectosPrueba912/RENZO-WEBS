@@ -36,7 +36,7 @@ export default function Home() {
 
   useEffect(() => {
     setLoading(true)
-    fetch('http://localhost:8000/products')
+    fetch('https://renzo-webs.onrender.com/products')
       .then(r => r.json())
       .then(data => { 
         setProducts(data)

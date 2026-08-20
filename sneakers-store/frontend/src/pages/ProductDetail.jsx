@@ -19,12 +19,12 @@ export default function ProductDetail() {
   const { addItem } = useCart()
 
   useEffect(() => {
-    fetch(`http://localhost:8000/products/${id}`)
+    fetch(`https://renzo-webs.onrender.com/products/${id}`)
       .then(r => r.json())
       .then(data => {
         setProduct(data)
         setSelectedImage(0)
-        return fetch(`http://localhost:8000/products?category=${data.category}`)
+        return fetch(`https://renzo-webs.onrender.com/products?category=${data.category}`)
       })
       .then(r => r.json())
       .then(all => setRelated(all.filter(p => p.id !== parseInt(id)).slice(0, 3)))
