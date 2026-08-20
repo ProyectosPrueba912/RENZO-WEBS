@@ -363,4 +363,46 @@
   .cart-drawer {
     width: 100vw;
   }
+
+  .cart-header {
+    padding: 1rem 1.2rem;
+  }
+
+  .cart-header h2 {
+    font-size: 0.95rem;
+  }
+
+  .cart-items {
+    padding: 0.8rem 1.2rem;
+  }
+
+  .cart-item-img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .cart-item-name {
+    font-size: 0.82rem;
+  }
+
+  .cart-item-size {
+    font-size: 0.75rem;
+  }
+
+  .cart-footer {
+    padding: 1rem 1.2rem;
+  }
+
+  .cart-total {
+    font-size: 0.9rem;
+  }
+
+  .cart-total-price {
+    font-size: 1.2rem;
+  }
+
+  .cart-whatsapp-btn {
+    font-size: 0.9rem;
+    padding: 0.85rem;
+  }
 }

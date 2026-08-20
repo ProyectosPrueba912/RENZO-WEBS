@@ -289,6 +289,85 @@
   .filters-sidebar {
     position: relative;
     top: 0;
+    padding: 1.2rem;
+  }
+
+  .filter-toggle-desktop {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .filters-header {
+    padding-bottom: 0.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .filters-header h3 {
+    font-size: 1rem;
+  }
+
+  .filter-section {
+    padding: 0.8rem 0;
+  }
+
+  .filter-title {
+    font-size: 0.9rem;
+  }
+
+  .size-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .filters-sidebar {
+    padding: 1rem;
+  }
+
+  .filters-header h3 {
+    font-size: 0.95rem;
+  }
+
+  .clear-filters {
+    font-size: 0.8rem;
+  }
+
+  .filter-title {
+    font-size: 0.85rem;
+  }
+
+  .filter-option {
+    font-size: 0.8rem;
+  }
+
+  .size-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.4rem;
+  }
+
+  .size-filter-btn {
+    padding: 0.4rem;
+    font-size: 0.75rem;
+  }
+
+  .price-inputs input {
+    padding: 0.4rem;
+    font-size: 0.8rem;
+  }
+
+  .price-range-display {
+    font-size: 0.75rem;
+  }
+
+  .remove-filter {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .size-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -553,5 +632,73 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Mejoras adicionales para móvil */
+@media (max-width: 768px) {
+  .section {
+    padding: 0 1rem;
+    margin: 2rem auto;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .categories-section {
+    margin: 1.5rem 0 0 0;
+  }
+
+  .category-card {
+    height: 250px;
+  }
+
+  .category-overlay {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .category-overlay span {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+
+  .detail-item {
+    height: 200px;
+  }
+
+  .detail-overlay {
+    padding: 1.2rem;
+  }
+
+  .detail-overlay h3 {
+    font-size: 1rem;
+  }
+
+  .detail-overlay p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 0 0.75rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .category-card {
+    height: 200px;
+  }
+
+  .category-overlay span {
+    font-size: 1rem;
+  }
+
+  .detail-item {
+    height: 180px;
   }
 }

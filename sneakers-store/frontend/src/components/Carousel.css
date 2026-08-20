@@ -72,3 +72,45 @@
 .slide-btn:hover {
   background: #d4920a;
 }
+
+@media (max-width: 768px) {
+  .carousel {
+    height: 70vh;
+    min-height: 400px;
+  }
+
+  .slide-overlay h2 {
+    font-size: 1.8rem;
+    padding: 0 1rem;
+  }
+
+  .slide-overlay p {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  .slide-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    height: 60vh;
+    min-height: 350px;
+  }
+
+  .slide-overlay h2 {
+    font-size: 1.5rem;
+  }
+
+  .slide-overlay p {
+    font-size: 0.85rem;
+  }
+
+  .slide-btn {
+    padding: 0.55rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}

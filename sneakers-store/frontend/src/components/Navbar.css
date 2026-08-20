@@ -258,22 +258,59 @@
 }
 
 @media (max-width: 900px) {
+  .top-banner {
+    font-size: 0.7rem;
+    padding: 0.45rem 0.5rem;
+  }
+
   .nav-group-left,
   .nav-group-right {
     display: none;
   }
+  
   .nav-inner {
-    justify-content: center;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
   }
+  
   .logo {
     position: static;
     transform: none;
   }
 
+  .logo-script {
+    font-size: 2rem;
+  }
+
+  .logo-sub {
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+  }
+
   .cart-floating-btn {
-    top: 0.8rem;
+    top: 3.2rem;
     right: 1rem;
     width: 45px;
     height: 45px;
+  }
+
+  .navbar.scrolled .cart-floating-btn {
+    top: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-banner {
+    font-size: 0.65rem;
+    padding: 0.4rem 0.5rem;
+  }
+
+  .logo-script {
+    font-size: 1.8rem;
+  }
+
+  .cart-floating-btn {
+    width: 42px;
+    height: 42px;
   }
 }
