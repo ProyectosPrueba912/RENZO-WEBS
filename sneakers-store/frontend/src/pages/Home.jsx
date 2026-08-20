@@ -21,8 +21,9 @@ export default function Home() {
   const [selectedBrands, setSelectedBrands] = useState([])
   const [priceMin, setPriceMin] = useState(0)
   const [priceMax, setPriceMax] = useState(200)
-  const [showFilters, setShowFilters] = useState(true)
-  
+  const [showFilters, setShowFilters] = useState(false)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900)
+
   // Controlar secciones expandidas
   const [expandedSections, setExpandedSections] = useState({
     category: true,
@@ -30,6 +31,18 @@ export default function Home() {
     brand: false,
     price: true
   })
+
+  // Detectar si es móvil
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 900
+      setIsMobile(mobile)
+      if (!mobile) setShowFilters(true) // En desktop siempre visible
+    }
+    window.addEventListener('resize', handleResize)
+    handleResize()
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const [searchParams] = useSearchParams()
   const categoryParam = searchParams.get('category')
@@ -131,18 +144,30 @@ export default function Home() {
       <section className="section fade-in" id="productos">
         <div className="products-header">
           <button className="filter-toggle-desktop" onClick={() => setShowFilters(!showFilters)}>
-            {showFilters ? '← Ocultar Filtros' : 'Mostrar Filtros →'}
+            {isMobile
+              ? '⊞ Filtros'
+              : showFilters ? '← Ocultar Filtros' : 'Mostrar Filtros →'
+            }
           </button>
         </div>
 
-        <div className="products-layout">
-          {/* Sidebar de filtros */}
-          {showFilters && (
-            <aside className="filters-sidebar">
-              <div className="filters-header">
-                <h3>FILTROS</h3>
+        {/* Overlay oscuro para móvil */}
+        {isMobile && showFilters && (
+          <div className="filters-overlay" onClick={() => setShowFilters(false)} />
+        )}
+
+        <div className={`products-layout ${!showFilters && !isMobile ? 'no-sidebar' : ''}`}>
+          {/* Sidebar de filtros - siempre en DOM en desktop, drawer en móvil */}
+          <aside className={`filters-sidebar ${showFilters ? 'visible' : ''}`}>
+            <div className="filters-header">
+              <h3>FILTROS</h3>
+              <div style={{display:'flex', gap:'1rem', alignItems:'center'}}>
                 <button className="clear-filters" onClick={clearFilters}>Limpiar</button>
+                {isMobile && (
+                  <button className="filters-close-btn" onClick={() => setShowFilters(false)}>✕</button>
+                )}
               </div>
+            </div>
 
             {/* Categoría */}
             <div className="filter-section">
@@ -247,7 +272,6 @@ export default function Home() {
               )}
             </div>
           </aside>
-          )}
 
           {/* Grid de productos */}
           <div className="products-main">
