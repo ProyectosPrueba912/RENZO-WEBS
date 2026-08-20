@@ -1,0 +1,234 @@
+.contacto-hero {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+  margin-top: 8.5rem;
+}
+
+.contacto-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contacto-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  gap: 0.8rem;
+}
+
+.contacto-hero-overlay h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.contacto-hero-overlay p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+.contacto-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.contacto-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contacto-intro h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+  color: #111;
+}
+
+.contacto-intro p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.contacto-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* Iconos SVG minimalistas */
+.contacto-icon {
+  display: block;
+  line-height: 1;
+}
+
+.contacto-icon--svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contacto-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.contacto-card p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.contacto-detail {
+  font-weight: 600;
+  color: #111 !important;
+  font-size: 0.95rem !important;
+}
+
+.contacto-btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background: #111;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+}
+
+.contacto-btn:hover {
+  background: #333;
+}
+
+/* Solo el botón de WhatsApp mantiene verde */
+.contacto-btn.whatsapp {
+  background: #25d366;
+}
+
+.contacto-btn.whatsapp:hover {
+  background: #1da851;
+}
+
+.contacto-faq {
+  margin-top: 3rem;
+}
+
+.contacto-faq h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #111;
+}
+
+/* Accordion style */
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: #e0e0e0;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.faq-accordion-item {
+  background: #fff;
+  transition: background 0.2s;
+}
+
+.faq-accordion-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #555;
+  text-align: left;
+  transition: color 0.2s;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.faq-accordion-item.active .faq-accordion-question {
+  color: #111;
+}
+
+.faq-accordion-question:hover {
+  color: #111;
+}
+
+.faq-accordion-icon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #aaa;
+  flex-shrink: 0;
+  margin-left: 1rem;
+  transition: color 0.2s;
+  line-height: 1;
+}
+
+.faq-accordion-item.active .faq-accordion-icon {
+  color: #111;
+}
+
+.faq-accordion-answer {
+  padding: 0 1.5rem 1.2rem 1.5rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.faq-accordion-answer p {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .contacto-grid {
+    grid-template-columns: 1fr;
+  }
+  .contacto-hero-overlay h1 {
+    font-size: 1.8rem;
+  }
+}

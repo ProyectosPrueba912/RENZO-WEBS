@@ -1,0 +1,279 @@
+.top-banner {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 0.55rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+}
+
+.top-banner p {
+  margin: 0;
+}
+
+/* ── Navbar principal ── */
+.navbar {
+  position: absolute;
+  top: 2.05rem;        /* altura del banner */
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background 0.35s ease, box-shadow 0.35s ease, top 0.35s ease;
+}
+
+.navbar.scrolled {
+  position: fixed;
+  top: 0;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  padding-top: 2.05rem;
+}
+
+/* Para páginas que no son Home - sin scroll */
+.navbar.fixed-nav {
+  position: fixed;
+  top: 2.05rem;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Para páginas que no son Home - con scroll */
+.navbar.fixed-nav.scrolled {
+  top: 0;
+  padding-top: 2.05rem;
+}
+
+.navbar.fixed-nav .logo-script {
+  color: #7a1a1a;
+}
+
+.navbar.fixed-nav .logo-sub {
+  color: #999;
+}
+
+.navbar.fixed-nav .nav-item {
+  color: #222;
+}
+
+.navbar.fixed-nav .menu-icon {
+  color: #111;
+}
+
+.navbar.fixed-nav .icon-btn {
+  color: #111;
+}
+
+.navbar.fixed-nav .nav-links {
+  border-top: 1px solid #f0f0f0;
+}
+
+/* ── Fila única ── */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1.1rem 2rem;
+  gap: 3rem;
+}
+
+.navbar.scrolled .nav-inner {
+  padding-top: 1.1rem;
+}
+
+/* Logo centro */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ── Grupos de links ── */
+.nav-group-left,
+.nav-group-right {
+  display: flex;
+  list-style: none;
+  gap: 1.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-group-right {
+  justify-content: flex-end;
+}
+
+.nav-item {
+  position: relative;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.navbar.scrolled .nav-item {
+  color: #222;
+}
+
+.nav-item:hover {
+  opacity: 0.65;
+}
+
+/* ── Dropdown ── */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 0.4rem 0;
+  min-width: 180px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+/* Pseudo-elemento para llenar el gap entre el botón y el dropdown */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: transparent;
+  pointer-events: auto;
+}
+
+.dropdown span {
+  display: block;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.78rem;
+  color: #333;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.dropdown span:hover {
+  background: #f5f5f5;
+  color: #111;
+}
+
+/* ── Logo centro ── */
+.logo-script {
+  font-family: 'Georgia', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-style: italic;
+  color: #fff;
+  letter-spacing: 1px;
+  transition: color 0.35s ease;
+  line-height: 1;
+}
+
+.navbar.scrolled .logo-script {
+  color: #7a1a1a;
+}
+
+.logo-sub {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  margin-top: 4px;
+  transition: color 0.35s ease;
+  font-style: italic;
+}
+
+.navbar.scrolled .logo-sub {
+  color: #999;
+}
+
+/* Cart floating button */
+.cart-floating-btn {
+  position: fixed;
+  top: 3.5rem;
+  right: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1500;
+  backdrop-filter: blur(10px);
+}
+
+.cart-floating-btn:hover {
+  background: rgba(122, 26, 26, 0.95);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cart-floating-count {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background: #7a1a1a;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: 2px solid #fff;
+}
+
+@media (max-width: 900px) {
+  .nav-group-left,
+  .nav-group-right {
+    display: none;
+  }
+  .nav-inner {
+    justify-content: center;
+  }
+  .logo {
+    position: static;
+    transform: none;
+  }
+
+  .cart-floating-btn {
+    top: 0.8rem;
+    right: 1rem;
+    width: 45px;
+    height: 45px;
+  }
+}

@@ -1,0 +1,57 @@
+.notfound-container {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1.5rem;
+  margin-top: 8.5rem;
+  gap: 1rem;
+}
+
+.notfound-emoji {
+  font-size: 5rem;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-15px); }
+}
+
+.notfound-container h1 {
+  font-size: 6rem;
+  font-weight: 900;
+  color: #111;
+  line-height: 1;
+}
+
+.notfound-container h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.notfound-container p {
+  font-size: 1rem;
+  color: #777;
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+.notfound-btn {
+  margin-top: 1rem;
+  padding: 0.9rem 2.5rem;
+  background: #111;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.notfound-btn:hover {
+  background: #333;
+}
