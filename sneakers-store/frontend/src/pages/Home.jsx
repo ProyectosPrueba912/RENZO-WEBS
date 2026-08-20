@@ -144,29 +144,15 @@ export default function Home() {
       <section className="section fade-in" id="productos">
         <div className="products-header">
           <button className="filter-toggle-desktop" onClick={() => setShowFilters(!showFilters)}>
-            {isMobile
-              ? '⊞ Filtros'
-              : showFilters ? '← Ocultar Filtros' : 'Mostrar Filtros →'
-            }
+            {showFilters ? '← Ocultar Filtros' : 'Mostrar Filtros →'}
           </button>
         </div>
 
-        {/* Overlay oscuro para móvil */}
-        {isMobile && showFilters && (
-          <div className="filters-overlay" onClick={() => setShowFilters(false)} />
-        )}
-
         <div className={`products-layout ${!showFilters && !isMobile ? 'no-sidebar' : ''}`}>
-          {/* Sidebar de filtros - siempre en DOM en desktop, drawer en móvil */}
           <aside className={`filters-sidebar ${showFilters ? 'visible' : ''}`}>
             <div className="filters-header">
               <h3>FILTROS</h3>
-              <div style={{display:'flex', gap:'1rem', alignItems:'center'}}>
-                <button className="clear-filters" onClick={clearFilters}>Limpiar</button>
-                {isMobile && (
-                  <button className="filters-close-btn" onClick={() => setShowFilters(false)}>✕</button>
-                )}
-              </div>
+              <button className="clear-filters" onClick={clearFilters}>Limpiar</button>
             </div>
 
             {/* Categoría */}
