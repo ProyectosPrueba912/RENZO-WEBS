@@ -21,6 +21,12 @@
   position: relative;
 }
 
+@media (max-width: 900px) {
+  .image-container {
+    height: 280px;
+  }
+}
+
 .product-image {
   position: absolute;
   top: 0;
@@ -91,7 +97,7 @@
 
 @media (max-width: 600px) {
   .image-container {
-    height: 200px;
+    height: 160px !important;
   }
 
   .card-info h3 {
