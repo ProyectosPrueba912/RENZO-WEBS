@@ -88,3 +88,21 @@
   padding: 3px 8px;
   border-radius: 20px;
 }
+
+@media (max-width: 600px) {
+  .image-container {
+    height: 200px;
+  }
+
+  .card-info h3 {
+    font-size: 0.75rem;
+  }
+
+  .final-price {
+    font-size: 0.8rem;
+  }
+
+  .old-price {
+    font-size: 0.72rem;
+  }
+}
